@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 1 с массивами</title>
+</head>
+<body>
+    <script type = "text/javascript">
+        const fill = (arraySize, value) => new Array(arraySize).fill(value);
+        const data = prompt('Введите количество элементов массива (целое положительное число)','');
+        if (data.trim() == '') {
+            alert('Вы не ввели количество элементов массива!')
+        }
+        else if (!isFinite(data)) {
+            alert('То, что Вы ввели, не является числом либо является NaN, положительной или отрицательной бесконечностью.');
+        }
+        const valueToFill = prompt('Введите значение элемента массива для заполнения','');
+        if (!isFinite(data) || data.trim() == '') {
+            alert('Вы не ввели количество элементов массива или оно является NaN, положительной или отрицательной бесконечностью.');
+        }
+        else {
+        console.log(`Массив с количеством элементов, равным ${data.trim()}, заполненный ${valueToFill}: \n${fill(+data.trim(), valueToFill)}`);
+        }
+    </script>
+</body>
+</html>
