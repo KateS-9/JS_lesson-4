@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 9</title>
+</head>
+<body>
+    <script>
+        const data = ['a', 'b', 'c', 'b', 'a'];
+        function uniq(data) {
+            return data.sort().filter(function(item, pos, ary) {
+            return !pos || item != ary[pos - 1];
+            })
+        }
+        console.log(`Исходный массив: ${data}, \nновый массив без повторяющихся элементов: ${uniq(data)}`);
+    </script>
+</body>
+</html>

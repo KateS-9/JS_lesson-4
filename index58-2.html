@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 16</title>
+</head>
+<body>
+    <script>
+        let numArr = prompt("Введите элементы массива (через пробел):", '');
+        const data = numArr.replace(/^\[([\s\S]*)]$/, '$1').split(' ');
+        console.log(`Исходный массив: ${data}`);
+        const compact = (array) => array.filter((el) => el >= 99);
+        if(compact(data).length > 1)
+            console.log(`Отфильтрованный массив, все элементы которого больше или равны 99: ${compact(data)}\n`);
+        else
+            console.log(`Нет элементов, которые больше или равны 99`);
+    </script>
+</body>
+</html>

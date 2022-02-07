@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 18</title>
+</head>
+<body>
+    <script>
+        const n = prompt('Нахождение n-го числа Фибоначчи. Введите целое неотрицательное число n:\nP.s. при вводе числа больше, чем 1476, результат будет очень большим (близок к бесконечности).','');
+        if (n.trim() == '') {
+            alert('Вы не ввели число n!')
+        }
+        else if (!isFinite(n)) {
+            alert('То, что Вы ввели, не является числом либо является NaN, положительной или отрицательной бесконечностью.');
+        }
+        else if (n <= 1476 && (!Number.isInteger(+n) || n < 0)) {
+            alert('Вы не ввели целое неотрицательное число!');
+        }
+        if (n > 1476 || n < 0 || (!isFinite(n) || n.trim() == '')) {
+            alert('Вы не ввели целое неотрицательное число либо число или результат является NaN, положительной или отрицательной бесконечностью.');
+        }
+        else if (n >= 0 && n <= 1476 && Number.isInteger(+n) && n >= 0) {
+            function fibonacci(n) {
+                let array = [0, 1];
+                for (let i = 2; i <= n; i++) {
+                    array[i] = array[i - 2] + array[i - 1];
+                }
+                return array[n];
+            }
+            console.log(`Число Фибоначчи для ${n.trim()} равно ${fibonacci(n.trim())}`);
+        }    
+    </script>
+</body>
+</html>
